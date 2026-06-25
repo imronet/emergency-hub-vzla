@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Ayuda - Venezuela</title>
+    <style>
+        /* =========================================
+           VARIABLES Y RESET BÁSICO
+           ========================================= */
+        :root {
+            --bg-color: #000000;
+            --text-color: #f1f1f1;
+            --accent-color: #222222;
+            --link-color: #4da6ff;
+            --hover-color: #66b3ff;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fuente de sistema suave y nativa (0 descargas requeridas) */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           CONTENEDOR PRINCIPAL
+           ========================================= */
+        .container {
+            width: 100%;
+            max-width: 500px; /* Ancho ajustado para centrar contenido en PC, fluido en móviles */
+            margin: 20px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            font-weight: normal;
+        }
+
+        /* =========================================
+           ACORDEONES / DESPLEGABLES (<details>)
+           ========================================= */
+        details {
+            background-color: var(--accent-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border: 1px solid #333;
+        }
+
+        /* El título del desplegable */
+        summary {
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            list-style: none; /* Oculta la flecha por defecto */
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Flecha personalizada */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::before {
+            content: "▼ ";
+            font-size: 0.8rem;
+            color: #888;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+        details[open] summary::before {
+            transform: rotate(180deg);
+        }
+
+        /* Contenedor de la información al desplegar */
+        .content {
+            padding: 15px 0 5px 0;
+            border-top: 1px solid #444;
+            margin-top: 10px;
+        }
+
+        /* =========================================
+           ENLACES Y BOTONES
+           ========================================= */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--hover-color);
+            text-decoration: underline;
+        }
+
+        /* Estilos para que los enlaces parezcan botones clickeables */
+        .btn-link {
+            display: block;
+            background-color: #111;
+            border: 1px solid #444;
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+        .btn-link:hover {
+            background-color: #2a2a2a;
+            text-decoration: none;
+        }
+        
+        .section-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin: 15px 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Disclaimer de donaciones */
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #ff9999;
+            background-color: #331111;
+            border: 1px solid #552222;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hub de Ayuda - Venezuela</h1>
+
+        <details>
+            <summary>Contactos de Emergencia / Salud</summary>
+            <div class="content">
+                
+                <p class="section-title">Emergencias Generales</p>
+                <a href="tel:911" class="btn-link">Línea Nacional de Emergencias - 911</a>
+                
+                <p class="section-title">Protección Civil y Bomberos</p>
+                <a href="tel:08007248451" class="btn-link">Protección Civil Nacional - 0800-PCIVIL-1</a>
+                <a href="tel:02125418933" class="btn-link">Bomberos Distrito Capital - (0212) 541-8933</a>
+
+                <p class="section-title">Salud Mental y Apoyo Psicosocial</p>
+                <a href="tel:02124163116" class="btn-link">Fed. Psicólogos (Línea de Ayuda) - 0212 4163116</a>
+                <a href="tel:04126365015" class="btn-link">Comité Cruz Roja (Centro Contacto) - 0412 6365015</a>
+                
+                </div>
+        </details>
+
+        <details>
+            <summary>Quiero Donar</summary>
+            <div class="content">
+                
+                <div class="disclaimer">
+                    <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza los GoFundMe y demás iniciativas de recaudación oficiales y verificadas.
+                </div>
+                
+                <a href="https://www.gofundme.com/search?q=Emergency+Relief+Venezuela+Earthquake+Victims" target="_blank" class="btn-link">
+                    GoFundMe: Emergency Relief Venezuela Earthquake Victims
+                </a>
+                
+                </div>
+        </details>
+
+        <details>
+            <summary>Necesito encontrar a alguien</summary>
+            <div class="content">
+                
+                <a href="https://desaparecidosterremotovenezuela.com/" target="_blank" class="btn-link">Desaparecidos Terremoto Venezuela</a>
+                <a href="https://venezuelatebusca.com/" target="_blank" class="btn-link">Venezuela Te Busca</a>
+                
+            </div>
+        </details>
+    </div>
+
+    <footer>
+        <p>Mantente al tanto de las réplicas oficiales:</p>
+        <p><a href="https://x.com/funvisis" target="_blank">Sigue a @FUNVISIS en X</a></p>
+    </footer>
+
+</body>
+</html>
