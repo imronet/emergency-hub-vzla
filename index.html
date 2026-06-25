@@ -11,7 +11,7 @@
         :root {
             --bg-color: #000000;
             --text-color: #f1f1f1;
-            --accent-color: #222222;
+            --accent-color: #1a1a1a;
             --link-color: #4da6ff;
             --hover-color: #66b3ff;
             --border-radius: 8px;
@@ -23,7 +23,6 @@
             padding: 0;
         }
 
-        /* Fuente de sistema suave y nativa (0 descargas requeridas) */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: var(--bg-color);
@@ -33,51 +32,44 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* =========================================
-           CONTENEDOR PRINCIPAL
-           ========================================= */
         .container {
             width: 100%;
-            max-width: 500px; /* Ancho ajustado para centrar contenido en PC, fluido en móviles */
-            margin: 20px auto;
+            max-width: 550px;
+            margin: 10px auto;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.6rem;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
             font-weight: normal;
         }
 
         /* =========================================
-           ACORDEONES / DESPLEGABLES (<details>)
+           ACORDEONES / DESPLEGABLES
            ========================================= */
         details {
             background-color: var(--accent-color);
             border-radius: var(--border-radius);
-            margin-bottom: 15px;
-            padding: 10px 15px;
+            margin-bottom: 12px;
+            padding: 12px 15px;
             border: 1px solid #333;
         }
 
-        /* El título del desplegable */
         summary {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             cursor: pointer;
-            list-style: none; /* Oculta la flecha por defecto */
-            padding: 5px 0;
+            list-style: none;
             display: flex;
             align-items: center;
         }
 
-        /* Flecha personalizada */
-        summary::-webkit-details-marker {
-            display: none;
-        }
+        summary::-webkit-details-marker { display: none; }
+        
         summary::before {
             content: "▼ ";
             font-size: 0.8rem;
@@ -85,31 +77,30 @@
             margin-right: 10px;
             transition: transform 0.2s;
         }
+        
         details[open] summary::before {
             transform: rotate(180deg);
         }
 
-        /* Contenedor de la información al desplegar */
         .content {
             padding: 15px 0 5px 0;
             border-top: 1px solid #444;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         /* =========================================
-           ENLACES Y BOTONES
+           ENLACES, BOTONES Y BLOQUES DE TEXTO
            ========================================= */
         a {
             color: var(--link-color);
             text-decoration: none;
-            transition: color 0.2s;
         }
+        
         a:hover {
             color: var(--hover-color);
             text-decoration: underline;
         }
 
-        /* Estilos para que los enlaces parezcan botones clickeables */
         .btn-link {
             display: block;
             background-color: #111;
@@ -118,45 +109,83 @@
             border-radius: var(--border-radius);
             margin-bottom: 10px;
             text-align: center;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #fff;
         }
+
         .btn-link:hover {
             background-color: #2a2a2a;
             text-decoration: none;
         }
-        
+
+        /* Estilo especial para el link de la Nota de Prensa */
+        .btn-highlight {
+            background-color: #003366;
+            border-color: #004080;
+            margin-top: 20px;
+        }
+        .btn-highlight:hover { background-color: #004080; }
+
         .section-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #aaa;
             margin: 15px 0 8px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
         }
-        .section-title:first-child {
-            margin-top: 0;
-        }
+        .section-title:first-child { margin-top: 0; }
 
-        /* Disclaimer de donaciones */
         .disclaimer {
             font-size: 0.85rem;
             color: #ff9999;
             background-color: #331111;
             border: 1px solid #552222;
-            padding: 12px;
+            padding: 10px;
             border-radius: var(--border-radius);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: center;
         }
+
+        /* Bloques de información estática (no clickeables) */
+        .info-block {
+            background-color: #111;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-bottom: 10px;
+            border: 1px solid #222;
+        }
+
+        .info-list {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+        
+        .info-list li { margin-bottom: 8px; }
 
         /* =========================================
            FOOTER
            ========================================= */
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
-            font-size: 0.9rem;
-            color: #888;
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        footer p { margin-bottom: 10px; }
+        
+        .legal-text {
+            font-size: 0.75rem;
+            color: #555;
+            text-align: justify;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -165,56 +194,157 @@
     <div class="container">
         <h1>Hub de Ayuda - Venezuela</h1>
 
+        <!-- ========================================================
+             1. DIRECTORIO DE EMERGENCIA Y RESCATE
+             ======================================================== -->
         <details>
-            <summary>Contactos de Emergencia / Líneas de Salud</summary>
+            <summary>Directorio de Emergencia y Rescate</summary>
             <div class="content">
-                
-                <p class="section-title">Emergencias Generales</p>
-                <a href="tel:911" class="btn-link">Línea Nacional de Emergencias - 911</a>
-                
-                <p class="section-title">Protección Civil y Bomberos</p>
-                <a href="tel:08007248451" class="btn-link">Protección Civil Nacional - 0800-PCIVIL-1</a>
-                <a href="tel:02125418933" class="btn-link">Bomberos Distrito Capital - (0212) 541-8933</a>
+                <p class="section-title">Servicios de Telecomunicación Nacional</p>
+                <a href="tel:171" class="btn-link">171 (Desde fijo Cantv)</a>
+                <a href="tel:*1" class="btn-link">*1 (Desde Movilnet)</a>
+                <a href="tel:112" class="btn-link">112 (Desde Digitel)</a>
+                <a href="tel:911" class="btn-link">911 (Emergencias - Movistar)</a>
 
-                <p class="section-title">Salud Mental y Apoyo Psicosocial</p>
-                <a href="tel:02124163116" class="btn-link">Fed. Psicólogos (Línea de Ayuda) - 0212 4163116</a>
-                <a href="tel:04126365015" class="btn-link">Comité Cruz Roja (Centro Contacto) - 0412 6365015</a>
-                
+                <p class="section-title">Protección Civil</p>
+                <a href="tel:08007248451" class="btn-link">Nacional - 0800-PCIVIL-1</a>
+                <a href="tel:02125751829" class="btn-link">Distrito Capital - (0212) 575.18.29</a>
+
+                <p class="section-title">Cuerpos de Bomberos (Principales)</p>
+                <a href="tel:02125454545" class="btn-link">Metropolitanos (Central) - (0212) 545.45.45</a>
+                <a href="tel:02123327620" class="btn-link">La Guaira - (0212) 332.76.20</a>
+
+                <p class="section-title">Emisoras de Radio Informativas</p>
+                <div class="info-block">
+                    Sintonice: <strong>90.3 FM, 107.9 FM, 99.9 FM, 107.3 FM</strong>
                 </div>
+            </div>
         </details>
 
+        <!-- ========================================================
+             2. INICIATIVAS DE AYUDA, TRASLADOS Y REFUGIOS
+             ======================================================== -->
         <details>
-            <summary>Quiero Donar</summary>
+            <summary>Iniciativas de Ayuda, Traslados y Refugios</summary>
             <div class="content">
-                
-                <div class="disclaimer">
-                    <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza los GoFundMe y demás iniciativas de recaudación oficiales y verificadas.
+                <p class="section-title">Traslados Médicos Gratuitos</p>
+                <div class="info-block">
+                    <strong>Yummy Rides y Ridery:</strong> Viajes gratuitos hacia hospitales y clínicas en Caracas.<br>
+                    <em>Ridery habilitó el código: ESTAMOSCONTIGO</em>
                 </div>
-                
+
+                <p class="section-title">Comunicaciones Liberadas</p>
+                <div class="info-block">
+                    <strong>Digitel:</strong> Llamadas y SMS gratis por 48h en Caracas, La Guaira, Morón, Valencia, San Diego, Maracay, San Felipe y Barquisimeto.<br>
+                    <strong>Movilnet:</strong> Llamadas y SMS gratis a nivel nacional.
+                </div>
+
+                <p class="section-title">Refugios Habilitados</p>
+                <div class="info-block">
+                    <strong>Caracas:</strong> Parque Generalísimo de Miranda.<br>
+                    <strong>La Guaira:</strong> Estadio de Béisbol de Macuto (con acceso a internet gratis).
+                </div>
+            </div>
+        </details>
+
+        <!-- ========================================================
+             3. ORGANIZACIONES DE ASISTENCIA Y RECAUDACIÓN
+             ======================================================== -->
+        <details>
+            <summary>Organizaciones de Asistencia y Recaudación</summary>
+            <div class="content">
+                <div class="disclaimer">
+                    <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza iniciativas oficiales y verificadas.
+                </div>
+
+                <p class="section-title">Fuentes Oficiales y Humanitarias</p>
+                <a href="tel:02125714380" class="btn-link">Cruz Roja Venezolana - (0212) 571.43.80</a>
+                <a href="tel:02124428113" class="btn-link">Cáritas de Venezuela - (0212) 442.81.13</a>
+
+                <p class="section-title">Centros de Acopio Nacionales</p>
+                <div class="info-block">
+                    Se requieren alimentos no perecederos, medicinas, kits de higiene y <strong>agua en bidones de 20 litros o más</strong>. <br><br>
+                    Hay puntos habilitados en: <strong>Aragua, Bolívar, Carabobo, Lara, Miranda, Monagas, Táchira y Zulia.</strong> <br>
+                    <em>(Consulte direcciones exactas en la Nota de Prensa al final de esta página).</em>
+                </div>
+
+                <p class="section-title">Recaudación Internacional</p>
                 <a href="https://www.gofundme.com/search?q=Emergency+Relief+Venezuela+Earthquake+Victims" target="_blank" class="btn-link">
                     GoFundMe: Emergency Relief Venezuela Earthquake Victims
                 </a>
-                
-                </div>
-        </details>
-
-        <details>
-            <summary>Necesito encontrar a alguien</summary>
-            <div class="content">
-                
-                <a href="https://desaparecidosterremotovenezuela.com/" target="_blank" class="btn-link">Desaparecidos Terremoto Venezuela</a>
-                <a href="https://venezuelatebusca.com/" target="_blank" class="btn-link">Venezuela Te Busca</a>
-                
             </div>
         </details>
+
+        <!-- ========================================================
+             4. APOYO LOGÍSTICO Y ENVÍOS SOLIDARIOS
+             ======================================================== -->
+        <details>
+            <summary>Apoyo Logístico y Envíos Solidarios</summary>
+            <div class="content">
+                <div class="info-block">
+                    Las empresas de encomiendas pueden habilitar puentes logísticos. Identifique siempre su paquete como <strong>"DONATIVO EMERGENCIA"</strong> y verifique en sus redes antes de acudir. Evite envases de vidrio.
+                </div>
+                
+                <a href="https://www.tealca.com/" target="_blank" class="btn-link">Tealca (Call Center: 0501-8325221)</a>
+                <a href="https://zoom.red/" target="_blank" class="btn-link">Fundación ZOOM (Envío Solidario)</a>
+                <a href="https://mrwve.com/contacto" target="_blank" class="btn-link">MRW Venezuela</a>
+            </div>
+        </details>
+
+        <!-- ========================================================
+             5. BÚSQUEDA DE DESAPARECIDOS Y LESIONADOS
+             ======================================================== -->
+        <details>
+            <summary>Búsqueda de Desaparecidos y Lesionados</summary>
+            <div class="content">
+                <p class="section-title">Plataformas de Reporte</p>
+                <a href="http://desaparecidosterremotovenezuela.com" target="_blank" class="btn-link">Desaparecidos Terremoto Venezuela</a>
+                <a href="http://venezuelatebusca.com" target="_blank" class="btn-link">Venezuela Te Busca</a>
+                
+                <p class="section-title">Listados Actualizados</p>
+                <a href="http://t.me/lavozdeltuy" target="_blank" class="btn-link">Telegram: Lesionados Valles del Tuy</a>
+            </div>
+        </details>
+
+        <!-- ========================================================
+             6. GUÍAS PARA BUSCAR INFORMACIÓN SEGURA
+             ======================================================== -->
+        <details>
+            <summary>Guías para buscar información segura</summary>
+            <div class="content">
+                <ul class="info-list">
+                    <li><strong>Priorice cuentas verificadas:</strong> Busque siempre insignias oficiales de entes gubernamentales y ONG (Cruz Roja, PC).</li>
+                    <li><strong>Evite cadenas de WhatsApp:</strong> No difunda audios o textos que no provengan de un medio formal verificable.</li>
+                    <li><strong>Medios tradicionales:</strong> Sintonice canales de TV nacional y emisoras de radio conectadas con Protección Civil.</li>
+                    <li><strong>Cuestione la inmediatez:</strong> Verifique toda alarma o llamado urgente en al menos dos medios fiables antes de actuar o compartir.</li>
+                </ul>
+            </div>
+        </details>
+
+        <!-- ========================================================
+             NOTA DE PRENSA COMPLETA
+             ======================================================== -->
+        <a href="https://docs.google.com/document/d/1P-U-dniTVQYiqtnsXJXnmF1Qsh-qruxbFBfR-DHTZqI/edit?usp=drivesdk" target="_blank" class="btn-link btn-highlight">
+            📄 Leer Nota de Prensa y Reporte Detallado
+        </a>
+
     </div>
 
+    <!-- ========================================================
+         FOOTER / CRÉDITOS / LEGAL
+         ======================================================== -->
     <footer>
-        <p>¿Hay una réplica?:</p>
-        <p><a href="https://www.instagram.com/funvisis/" target="_blank">@funvisis en Instagram</a></p>
+        <p>Mantente al tanto de las réplicas oficiales:</p>
+        <p><a href="https://x.com/funvisis" target="_blank">Sigue a @FUNVISIS en X</a></p>
+        
+        <p style="margin-top: 20px;">
+            <strong>Código:</strong> Ronet Chirinos<br>
+            <strong>Información y nota de prensa:</strong> Lic. Alexandra Bello
+        </p>
 
-        <p>¿Quieres añadir algo a este hub?</p>
-        <p><a href="mailto:chirinosronet@gmail.com" target="_blank">Envíame un correo</a></p>
+        <p class="legal-text">
+            La información aquí expuesta tiene como único fin facilitar la coordinación de esfuerzos y orientar a la ciudadanía en el marco de la contingencia actual. Se insta a la población a mantenerse informada exclusivamente a través de los canales oficiales mencionados y a actuar con la prudencia que la situación requiere.
+        </p>
     </footer>
 
 </body>
