@@ -118,7 +118,6 @@
             text-decoration: none;
         }
 
-        /* Estilo especial para el link de la Nota de Prensa */
         .btn-highlight {
             background-color: #003366;
             border-color: #004080;
@@ -148,7 +147,6 @@
             text-align: center;
         }
 
-        /* Bloques de información estática (no clickeables) */
         .info-block {
             background-color: #111;
             padding: 12px;
@@ -195,11 +193,29 @@
         <h1>Hub de Ayuda - Venezuela</h1>
 
         <!-- ========================================================
+             NUEVA SECCIÓN: NOTICIAS (Para el Feed RSS y Bot)
+             ======================================================== -->
+        <details open>
+            <summary>Últimas Noticias (Feed)</summary>
+            <div class="content">
+                <!-- START_NOTICIAS -->
+                <!-- END_NOTICIAS -->
+                
+                <div class="info-block" style="text-align: center; color: #888;">
+                    <em>Monitoreando actualizaciones en tiempo real...</em>
+                </div>
+            </div>
+        </details>
+
+        <!-- ========================================================
              1. DIRECTORIO DE EMERGENCIA Y RESCATE
              ======================================================== -->
         <details>
             <summary>Directorio de Emergencia y Rescate</summary>
             <div class="content">
+                <!-- START_RESCATE -->
+                <!-- END_RESCATE -->
+
                 <p class="section-title">Servicios de Telecomunicación Nacional</p>
                 <a href="tel:171" class="btn-link">171 (Desde fijo Cantv)</a>
                 <a href="tel:*1" class="btn-link">*1 (Desde Movilnet)</a>
@@ -227,6 +243,9 @@
         <details>
             <summary>Iniciativas de Ayuda, Traslados y Refugios</summary>
             <div class="content">
+                <!-- START_TRASLADOS -->
+                <!-- END_TRASLADOS -->
+
                 <p class="section-title">Traslados Médicos Gratuitos</p>
                 <div class="info-block">
                     <strong>Yummy Rides y Ridery:</strong> Viajes gratuitos hacia hospitales y clínicas en Caracas.<br>
@@ -253,6 +272,9 @@
         <details>
             <summary>Organizaciones de Asistencia y Recaudación</summary>
             <div class="content">
+                <!-- START_RECAUDACION -->
+                <!-- END_RECAUDACION -->
+
                 <div class="disclaimer">
                     <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza iniciativas oficiales y verificadas.
                 </div>
@@ -281,6 +303,9 @@
         <details>
             <summary>Apoyo Logístico y Envíos Solidarios</summary>
             <div class="content">
+                <!-- START_LOGISTICA -->
+                <!-- END_LOGISTICA -->
+
                 <div class="info-block">
                     Las empresas de encomiendas pueden habilitar puentes logísticos. Identifique siempre su paquete como <strong>"DONATIVO EMERGENCIA"</strong> y verifique en sus redes antes de acudir. Evite envases de vidrio.
                 </div>
@@ -297,6 +322,9 @@
         <details>
             <summary>Búsqueda de Desaparecidos y Lesionados</summary>
             <div class="content">
+                <!-- START_DESAPARECIDOS -->
+                <!-- END_DESAPARECIDOS -->
+
                 <p class="section-title">Plataformas de Reporte</p>
                 <a href="http://desaparecidosterremotovenezuela.com" target="_blank" class="btn-link">Desaparecidos Terremoto Venezuela</a>
                 <a href="http://venezuelatebusca.com" target="_blank" class="btn-link">Venezuela Te Busca</a>
@@ -312,6 +340,7 @@
         <details>
             <summary>Guías para buscar información segura</summary>
             <div class="content">
+                <!-- Aquí no coloqué tags porque usualmente es información estática, pero puedes aplicar el mismo formato si deseas actualizarla dinámicamente en el futuro -->
                 <ul class="info-list">
                     <li><strong>Priorice cuentas verificadas:</strong> Busque siempre insignias oficiales de entes gubernamentales y ONG (Cruz Roja, PC).</li>
                     <li><strong>Evite cadenas de WhatsApp:</strong> No difunda audios o textos que no provengan de un medio formal verificable.</li>
