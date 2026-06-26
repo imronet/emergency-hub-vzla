@@ -49,6 +49,21 @@
         }
 
         /* =========================================
+           TÍTULOS DE SECCIÓN PRINCIPAL
+           ========================================= */
+        .main-category {
+            font-size: 1.2rem;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .main-category.feed { color: #00cc66; }
+        .main-category.vzla { color: #ffcc00; }
+        .main-category.ext { color: #4da6ff; }
+
+        /* =========================================
            ACORDEONES / DESPLEGABLES
            ========================================= */
         details {
@@ -91,15 +106,8 @@
         /* =========================================
            ENLACES, BOTONES Y BLOQUES DE TEXTO
            ========================================= */
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            color: var(--hover-color);
-            text-decoration: underline;
-        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { color: var(--hover-color); text-decoration: underline; }
 
         .btn-link {
             display: block;
@@ -157,12 +165,7 @@
             border: 1px solid #222;
         }
 
-        .info-list {
-            padding-left: 20px;
-            font-size: 0.9rem;
-            color: #ddd;
-        }
-        
+        .info-list { padding-left: 20px; font-size: 0.9rem; color: #ddd; }
         .info-list li { margin-bottom: 8px; }
 
         /* =========================================
@@ -193,173 +196,228 @@
         <h1>Hub de Ayuda - Venezuela</h1>
 
         <!-- ========================================================
-             NUEVA SECCIÓN: NOTICIAS (Para el Feed RSS y Bot)
+             SECCIÓN 1: FEED
              ======================================================== -->
+        <h2 class="main-category feed">📡 Feed</h2>
+        
         <details open>
-            <summary>Últimas Noticias (Feed)</summary>
+            <summary>Noticias y Emisiones</summary>
             <div class="content">
-                <!-- START_NOTICIAS -->
-                <a href="https://sos.yummyrides.com" target="_blank" class="btn-link"><strong>SOS YummyRides: Revisión de Daños Estructurales</strong><br><span style="font-size:0.85rem">Reporte sobre la revisión de daños estructurales de la plataforma SOS YummyRides.</span></a>
-
-                <!-- END_NOTICIAS -->
-                
+                <p class="section-title">RSS Feed / Últimas Noticias</p>
+                <!-- START_FEED_RSS -->
                 <div class="info-block" style="text-align: center; color: #888;">
                     <em>Monitoreando actualizaciones en tiempo real...</em>
                 </div>
+                <!-- END_FEED_RSS -->
+                
+                <p class="section-title">Emisoras de Radio Informativas</p>
+                <!-- START_FEED_EMISORAS -->
+                <div class="info-block">
+                    Sintonice: <strong>90.3 FM, 107.9 FM, 99.9 FM, 107.3 FM</strong>
+                </div>
+                <!-- END_FEED_EMISORAS -->
             </div>
         </details>
 
-        <!-- ========================================================
-             1. DIRECTORIO DE EMERGENCIA Y RESCATE
-             ======================================================== -->
-        <details>
-            <summary>Directorio de Emergencia y Rescate</summary>
-            <div class="content">
-                <!-- START_RESCATE -->
-                <!-- END_RESCATE -->
 
-                <p class="section-title">Servicios de Telecomunicación Nacional</p>
+        <!-- ========================================================
+             SECCIÓN 2: VENEZUELA
+             ======================================================== -->
+        <h2 class="main-category vzla">🇻🇪 Venezuela</h2>
+
+        <details>
+            <summary>Emergencia y Rescate</summary>
+            <div class="content">
+                <p class="section-title">Telecomunicación Nacional</p>
+                <!-- START_VE_RESCATE_TELECOM -->
                 <a href="tel:171" class="btn-link">171 (Desde fijo Cantv)</a>
                 <a href="tel:*1" class="btn-link">*1 (Desde Movilnet)</a>
                 <a href="tel:112" class="btn-link">112 (Desde Digitel)</a>
                 <a href="tel:911" class="btn-link">911 (Emergencias - Movistar)</a>
+                <!-- END_VE_RESCATE_TELECOM -->
 
                 <p class="section-title">Protección Civil</p>
+                <!-- START_VE_RESCATE_PC -->
                 <a href="tel:08007248451" class="btn-link">Nacional - 0800-PCIVIL-1</a>
                 <a href="tel:02125751829" class="btn-link">Distrito Capital - (0212) 575.18.29</a>
+                <!-- END_VE_RESCATE_PC -->
 
-                <p class="section-title">Cuerpos de Bomberos (Principales)</p>
+                <p class="section-title">Bomberos</p>
+                <!-- START_VE_RESCATE_BOMBEROS -->
                 <a href="tel:02125454545" class="btn-link">Metropolitanos (Central) - (0212) 545.45.45</a>
                 <a href="tel:02123327620" class="btn-link">La Guaira - (0212) 332.76.20</a>
-
-                <p class="section-title">Emisoras de Radio Informativas</p>
-                <div class="info-block">
-                    Sintonice: <strong>90.3 FM, 107.9 FM, 99.9 FM, 107.3 FM</strong>
-                </div>
+                <!-- END_VE_RESCATE_BOMBEROS -->
             </div>
         </details>
 
-        <!-- ========================================================
-             2. INICIATIVAS DE AYUDA, TRASLADOS Y REFUGIOS
-             ======================================================== -->
         <details>
-            <summary>Iniciativas de Ayuda, Traslados y Refugios</summary>
+            <summary>Traslado y Refugios</summary>
             <div class="content">
-                <!-- START_TRASLADOS -->
-                <!-- END_TRASLADOS -->
-
                 <p class="section-title">Traslados Médicos Gratuitos</p>
+                <!-- START_VE_TRASLADOS_MEDICOS -->
                 <div class="info-block">
                     <strong>Yummy Rides y Ridery:</strong> Viajes gratuitos hacia hospitales y clínicas en Caracas.<br>
                     <em>Ridery habilitó el código: ESTAMOSCONTIGO</em>
                 </div>
+                <!-- END_VE_TRASLADOS_MEDICOS -->
 
-                <p class="section-title">Comunicaciones Liberadas</p>
+                <p class="section-title">Comunicaciones</p>
+                <!-- START_VE_TRASLADOS_COMUNICACIONES -->
                 <div class="info-block">
                     <strong>Digitel:</strong> Llamadas y SMS gratis por 48h en Caracas, La Guaira, Morón, Valencia, San Diego, Maracay, San Felipe y Barquisimeto.<br>
                     <strong>Movilnet:</strong> Llamadas y SMS gratis a nivel nacional.
                 </div>
+                <!-- END_VE_TRASLADOS_COMUNICACIONES -->
 
                 <p class="section-title">Refugios Habilitados</p>
+                <!-- START_VE_TRASLADOS_REFUGIOS -->
                 <div class="info-block">
                     <strong>Caracas:</strong> Parque Generalísimo de Miranda.<br>
                     <strong>La Guaira:</strong> Estadio de Béisbol de Macuto (con acceso a internet gratis).
                 </div>
+                <!-- END_VE_TRASLADOS_REFUGIOS -->
             </div>
         </details>
 
-        <!-- ========================================================
-             3. ORGANIZACIONES DE ASISTENCIA Y RECAUDACIÓN
-             ======================================================== -->
         <details>
-            <summary>Organizaciones de Asistencia y Recaudación</summary>
+            <summary>Acopio</summary>
             <div class="content">
                 <div class="disclaimer">
-                    <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza iniciativas oficiales y verificadas.
+                    <strong>Importante:</strong> Esta plataforma busca visibilizar los canales de ayuda, no somos recaudadores ni centros de acopio directos.
                 </div>
-                
-                <!-- START_RECAUDACION -->
 
-                <div class="info-block"><strong>Campaña Recaudación Fondos Cruz Roja Venezuela:</strong> Cruz Roja Internacional recibe fondos globales para el terremoto en Venezuela a través de Cruz Roja Española.</div>
+                <p class="section-title">App de Centros de Acopio</p>
+                <!-- START_VE_ACOPIO_APP -->
+                <a href="https://centro-de-acopio-ven.vercel.app/" target="_blank" class="btn-link"><strong>Puntos de Acopio en Venezuela</strong><br><span style="font-size:0.85rem">Encuentra centros de acopio para donaciones.</span></a>
+                <!-- END_VE_ACOPIO_APP -->
 
-                <!-- END_RECAUDACION -->
-
-                <p class="section-title">Fuentes Oficiales y Humanitarias</p>
-                <a href="tel:02125714380" class="btn-link">Cruz Roja Venezolana - (0212) 571.43.80</a>
-                <a href="tel:02124428113" class="btn-link">Cáritas de Venezuela - (0212) 442.81.13</a>
-
-                <p class="section-title">Centros de Acopio Nacionales</p>
+                <p class="section-title">Necesidades</p>
+                <!-- START_VE_ACOPIO_NECESIDADES -->
                 <div class="info-block">
-                    Se requieren alimentos no perecederos, medicinas, kits de higiene y <strong>agua en bidones de 20 litros o más</strong>. <br><br>
-                    Hay puntos habilitados en: <strong>Aragua, Bolívar, Carabobo, Lara, Miranda, Monagas, Táchira y Zulia.</strong> <br>
-                    <em>(Consulte direcciones exactas en la Nota de Prensa al final de esta página).</em>
+                    Se requieren alimentos no perecederos, medicinas, kits de higiene y <strong>agua en bidones de 20 litros o más</strong>.<br>
+                    Puntos habilitados en: <strong>Aragua, Bolívar, Carabobo, Lara, Miranda, Monagas, Táchira y Zulia.</strong>
                 </div>
-                
-                <a href="https://centro-de-acopio-ven.vercel.app/" target="_blank" class="btn-link"><strong>Puntos de Acopio en Venezuela</strong><br><span style="font-size:0.85rem">Encuentra centros de acopio para donaciones en Venezuela. ¡Apoya la ayuda humanitaria local!</span></a>
-                
-                <p class="section-title">Recaudación Internacional</p>
-                <a href="https://www.gofundme.com/search?q=Emergency+Relief+Venezuela+Earthquake+Victims" target="_blank" class="btn-link">
-                    GoFundMe: Emergency Relief Venezuela Earthquake Victims
-                </a>
-            </div>
-        </details>
+                <!-- END_VE_ACOPIO_NECESIDADES -->
 
-        <!-- ========================================================
-             4. APOYO LOGÍSTICO Y ENVÍOS SOLIDARIOS
-             ======================================================== -->
-        <details>
-            <summary>Apoyo Logístico y Envíos Solidarios</summary>
-            <div class="content">
-                <!-- START_LOGISTICA -->
-                <!-- END_LOGISTICA -->
-
+                <p class="section-title">Apoyo Logístico</p>
+                <!-- START_VE_ACOPIO_LOGISTICA -->
                 <div class="info-block">
-                    Las empresas de encomiendas pueden habilitar puentes logísticos. Identifique siempre su paquete como <strong>"DONATIVO EMERGENCIA"</strong> y verifique en sus redes antes de acudir. Evite envases de vidrio.
+                    Empresas de encomiendas habilitan puentes logísticos. Identifique su paquete como <strong>"DONATIVO EMERGENCIA"</strong>. Evite envases de vidrio.
                 </div>
-                
                 <a href="https://www.tealca.com/" target="_blank" class="btn-link">Tealca (Call Center: 0501-8325221)</a>
                 <a href="https://zoom.red/" target="_blank" class="btn-link">Fundación ZOOM (Envío Solidario)</a>
                 <a href="https://mrwve.com/contacto" target="_blank" class="btn-link">MRW Venezuela</a>
+                <!-- END_VE_ACOPIO_LOGISTICA -->
+
+                <p class="section-title">Puntos de Contacto (Venezuela)</p>
+                <!-- START_VE_ACOPIO_PUNTOS -->
+                <!-- END_VE_ACOPIO_PUNTOS -->
             </div>
         </details>
 
-        <!-- ========================================================
-             5. BÚSQUEDA DE DESAPARECIDOS Y LESIONADOS
-             ======================================================== -->
         <details>
-            <summary>Búsqueda de Desaparecidos y Lesionados</summary>
+            <summary>Encuéntrame</summary>
             <div class="content">
-                <!-- START_DESAPARECIDOS -->
-                <a href="https://www.huellascan.com/terremoto" target="_blank" class="btn-link"><strong>Reporte de Mascotas Desaparecidas</strong><br><span style="font-size:0.85rem">Plataforma para reportar y buscar mascotas perdidas tras el terremoto.</span></a>
-
-                <a href="https://asistencia-medica-fvivemas.web.app/" target="_blank" class="btn-link"><strong>Asistencia Médica y Búsqueda de Desaparecidos</strong><br><span style="font-size:0.85rem">Servicio de asistencia médica y localización de personas desaparecidas.</span></a>
-
-                <a href="https://encuentralos.tecnosoft.dev/" target="_blank" class="btn-link"><strong>Encuentralos: Personas Desaparecidas</strong><br><span style="font-size:0.85rem">Plataforma dedicada a la búsqueda y localización de personas desaparecidas.</span></a>
-
-                <!-- END_DESAPARECIDOS -->
+                <p class="section-title">Listados Actualizados</p>
+                <!-- START_VE_ENCUENTRAME_LISTADOS -->
+                <a href="http://t.me/lavozdeltuy" target="_blank" class="btn-link">Telegram: Lesionados Valles del Tuy</a>
+                <!-- END_VE_ENCUENTRAME_LISTADOS -->
 
                 <p class="section-title">Plataformas de Reporte</p>
+                <!-- START_VE_ENCUENTRAME_PLATAFORMAS -->
+                <a href="https://asistencia-medica-fvivemas.web.app/" target="_blank" class="btn-link"><strong>Asistencia Médica y Búsqueda</strong><br><span style="font-size:0.85rem">Servicio de asistencia médica y localización.</span></a>
+                <a href="https://encuentralos.tecnosoft.dev/" target="_blank" class="btn-link"><strong>Encuentralos: Personas Desaparecidas</strong><br><span style="font-size:0.85rem">Búsqueda y localización de personas.</span></a>
                 <a href="http://desaparecidosterremotovenezuela.com" target="_blank" class="btn-link">Desaparecidos Terremoto Venezuela</a>
                 <a href="http://venezuelatebusca.com" target="_blank" class="btn-link">Venezuela Te Busca</a>
-                
-                <p class="section-title">Listados Actualizados</p>
-                <a href="http://t.me/lavozdeltuy" target="_blank" class="btn-link">Telegram: Lesionados Valles del Tuy</a>
+                <!-- END_VE_ENCUENTRAME_PLATAFORMAS -->
+
+                <p class="section-title">Mascotas</p>
+                <!-- START_VE_ENCUENTRAME_MASCOTAS -->
+                <a href="https://www.huellascan.com/terremoto" target="_blank" class="btn-link"><strong>Reporte de Mascotas Desaparecidas</strong><br><span style="font-size:0.85rem">Reportar y buscar mascotas perdidas tras el evento.</span></a>
+                <!-- END_VE_ENCUENTRAME_MASCOTAS -->
             </div>
         </details>
 
-        <!-- ========================================================
-             6. GUÍAS PARA BUSCAR INFORMACIÓN SEGURA
-             ======================================================== -->
         <details>
-            <summary>Guías para buscar información segura</summary>
+            <summary>Información de interés</summary>
             <div class="content">
-                <!-- Aquí no coloqué tags porque usualmente es información estática, pero puedes aplicar el mismo formato si deseas actualizarla dinámicamente en el futuro -->
+                <p class="section-title">Guía de información Segura</p>
+                <!-- START_VE_INFO_GUIA -->
                 <ul class="info-list">
                     <li><strong>Priorice cuentas verificadas:</strong> Busque siempre insignias oficiales de entes gubernamentales y ONG (Cruz Roja, PC).</li>
                     <li><strong>Evite cadenas de WhatsApp:</strong> No difunda audios o textos que no provengan de un medio formal verificable.</li>
                     <li><strong>Medios tradicionales:</strong> Sintonice canales de TV nacional y emisoras de radio conectadas con Protección Civil.</li>
                     <li><strong>Cuestione la inmediatez:</strong> Verifique toda alarma o llamado urgente en al menos dos medios fiables antes de actuar o compartir.</li>
                 </ul>
+                <!-- END_VE_INFO_GUIA -->
+
+                <p class="section-title">Recomendaciones para rescate</p>
+                <!-- START_VE_INFO_RESCATE -->
+                <ul class="info-list">
+                    <li>No intente remover escombros pesados sin la supervisión de Protección Civil o Bomberos.</li>
+                    <li>Mantenga las vías despejadas para el libre tránsito de ambulancias y vehículos de rescate.</li>
+                </ul>
+                <!-- END_VE_INFO_RESCATE -->
+
+                <p class="section-title">En caso de réplicas</p>
+                <!-- START_VE_INFO_REPLICAS -->
+                <ul class="info-list">
+                    <li><strong>Conserve la calma:</strong> Las réplicas son reacomodos normales después de un sismo fuerte.</li>
+                    <li><strong>Agáchese, cúbrase y agárrese:</strong> Protéjase debajo de un mueble resistente (mesa o escritorio) hasta que pase el movimiento.</li>
+                    <li><strong>Aléjese de peligros:</strong> Manténgase lejos de ventanas, espejos, estanterías y objetos que puedan caer.</li>
+                    <li><strong>Si está en el exterior:</strong> Diríjase a un área abierta, lejos de edificios, postes de luz y cables eléctricos.</li>
+                    <li><strong>No use ascensores:</strong> Utilice siempre las escaleras para evacuar si es necesario.</li>
+                </ul>
+                <!-- END_VE_INFO_REPLICAS -->
+            </div>
+        </details>
+
+
+        <!-- ========================================================
+             SECCIÓN 3: GENERAL - EXTERIOR
+             ======================================================== -->
+        <h2 class="main-category ext">🌍 General - Exterior</h2>
+
+        <details>
+            <summary>Fundraising</summary>
+            <div class="content">
+                <div class="disclaimer">
+                    <strong>Importante:</strong> Este website NO recauda dinero. Sólo centraliza iniciativas oficiales y verificadas.
+                </div>
+
+                <p class="section-title">Acopio por país</p>
+                <!-- START_EXT_FUND_ACOPIO -->
+                <!-- END_EXT_FUND_ACOPIO -->
+
+                <p class="section-title">Fundraising</p>
+                <!-- START_EXT_FUND_CAMPAIGN -->
+                <div class="info-block"><strong>Campaña Recaudación Fondos Cruz Roja Venezuela:</strong> Cruz Roja Internacional recibe fondos globales para el terremoto en Venezuela a través de Cruz Roja Española.</div>
+                <a href="https://www.gofundme.com/search?q=Emergency+Relief+Venezuela+Earthquake+Victims" target="_blank" class="btn-link">GoFundMe: Emergency Relief Venezuela Earthquake Victims</a>
+                <!-- END_EXT_FUND_CAMPAIGN -->
+            </div>
+        </details>
+
+        <details>
+            <summary>Información de interés</summary>
+            <div class="content">
+                <p class="section-title">Guía de información Segura</p>
+                <!-- START_EXT_INFO_GUIA -->
+                <ul class="info-list">
+                    <li>Verifique la fuente original de las iniciativas de recaudación internacional antes de aportar.</li>
+                    <li>Manténgase conectado con embajadas y consulados locales para protocolos oficiales.</li>
+                </ul>
+                <!-- END_EXT_INFO_GUIA -->
+
+                <p class="section-title">Recomendaciones de salud mental</p>
+                <!-- START_EXT_INFO_SALUD_MENTAL -->
+                <ul class="info-list">
+                    <li><strong>Limite la exposición a noticias:</strong> Evite la sobreinformación constante y el consumo de imágenes gráficas para reducir la ansiedad y el estrés agudo.</li>
+                    <li><strong>Valide sus emociones:</strong> Es completamente normal sentir miedo, tristeza o incertidumbre ante un desastre natural. No reprima lo que siente.</li>
+                    <li><strong>Mantenga el contacto:</strong> Hable con familiares, amigos o grupos de apoyo. La conexión social es fundamental para procesar la crisis.</li>
+                    <li><strong>Establezca rutinas posibles:</strong> Intentar mantener horarios regulares para la alimentación y el descanso ayuda a devolver una sensación de control.</li>
+                    <li><strong>Apoyo profesional:</strong> Si la ansiedad le impide funcionar en su día a día, contacte las líneas de ayuda psicosocial de emergencia habilitadas (Ej: Federación de Psicólogos).</li>
+                </ul>
+                <!-- END_EXT_INFO_SALUD_MENTAL -->
             </div>
         </details>
 
